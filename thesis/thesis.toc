@@ -1,0 +1,89 @@
+\contentsline {chapter}{Lời cảm ơn}{i}{chapter*.2}%
+\contentsline {chapter}{Tóm tắt dự án}{ii}{chapter*.3}%
+\contentsline {chapter}{Abstract}{iii}{chapter*.4}%
+\contentsline {chapter}{Résumé de thèse}{iv}{chapter*.5}%
+\contentsline {chapter}{DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT}{1}{chapter*.9}%
+\contentsline {chapter}{\numberline {1}Giới Thiệu Template \& Hướng Dẫn Cài Đặt}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Giới thiệu HCMUT-DEE Thesis Kit}{2}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Cấu trúc thư mục}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Cài đặt môi trường}{3}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Cách 1: Sử dụng Overleaf (Khuyến nghị)}{3}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Cách 2: TeXStudio + MiKTeX (Windows)}{3}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Cách 3: VS Code + LaTeX Workshop}{4}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}Biên dịch lần đầu}{4}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Chỉnh sửa thông tin cá nhân}{4}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Soạn Thảo Nội Dung \LaTeX {} Cơ Bản}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Cấu trúc heading}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Đoạn văn và xuống dòng}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Danh sách}{5}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Danh sách không đánh số (itemize)}{5}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Danh sách đánh số (enumerate)}{6}{subsection.2.3.2}%
+\contentsline {section}{\numberline {2.4}Định dạng văn bản}{6}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Footnote (Ghi chú chân trang)}{7}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Tham chiếu chéo (Cross-reference)}{7}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Viết tiếng Việt trong \LaTeX {}}{8}{section.2.7}%
+\contentsline {chapter}{\numberline {3}Hình Ảnh, Bảng Biểu \& Công Thức Toán}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Chèn hình ảnh}{9}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Hình ảnh đơn}{9}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Hình ảnh con (subfigure)}{10}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.3}Định dạng hình ảnh được hỗ trợ}{11}{subsection.3.1.3}%
+\contentsline {section}{\numberline {3.2}Bảng biểu}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Bảng đơn giản với booktabs}{12}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Bảng dài (longtable)}{12}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Bảng ngang trang (landscape)}{13}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Công thức toán}{13}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Công thức inline và display}{13}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Công thức đánh số}{13}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Hệ phương trình (align)}{14}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Ma trận}{14}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Thuật toán (algorithm2e)}{14}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Quản Lý Tài Liệu Tham Khảo Chuẩn IEEE}{16}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Tổng quan về BibTeX}{16}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Cấu trúc file .bib}{16}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Bài báo tạp chí (@article)}{16}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Bài conference (@inproceedings)}{17}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Sách (@book)}{17}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Luận văn / Đồ án (@mastersthesis, @phdthesis)}{17}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Website (@online hoặc @misc)}{17}{subsection.4.2.5}%
+\contentsline {section}{\numberline {4.3}Cách trích dẫn trong văn bản}{18}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Ví dụ thực tế trích dẫn sách giáo trình tiếng Việt}{18}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Lấy BibTeX nhanh}{19}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Từ Google Scholar}{19}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Từ Zotero / Mendeley}{19}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}Lưu ý thường gặp}{19}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Phụ Lục, Mã Nguồn \& Listing Code}{20}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Viết phụ lục}{20}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Chèn mã nguồn với listings}{20}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Python (\texttt {pythonstyle})}{20}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}MATLAB (\texttt {matlabstyle})}{21}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}C/C++ (\texttt {cstyle})}{21}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}PLC Structured Text (\texttt {plcstyle})}{22}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}Chèn file code bên ngoài}{22}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Đính kèm PDF bên ngoài}{23}{section.5.4}%
+\contentsline {chapter}{\numberline {6}FAQ, Mẹo \& Xử Lý Lỗi Thường Gặp}{24}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Lỗi biên dịch phổ biến}{24}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Undefined control sequence}{24}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Missing \$ inserted}{24}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}File not found}{24}{subsection.6.1.3}%
+\contentsline {subsection}{\numberline {6.1.4}LaTeX Error: Too many unprocessed floats}{25}{subsection.6.1.4}%
+\contentsline {section}{\numberline {6.2}Bảng tràn lề}{25}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Font tiếng Việt bị lỗi}{25}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Overleaf timeout}{26}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Mẹo hay}{26}{section.6.5}%
+\contentsline {subsection}{\numberline {6.5.1}\texttt {\textbackslash input} vs \texttt {\textbackslash include}}{26}{subsection.6.5.1}%
+\contentsline {subsection}{\numberline {6.5.2}Backup với Git}{26}{subsection.6.5.2}%
+\contentsline {subsection}{\numberline {6.5.3}Compile nhanh hơn}{27}{subsection.6.5.3}%
+\contentsline {section}{\numberline {6.6}Sử dụng AI hỗ trợ viết đồ án}{27}{section.6.6}%
+\contentsline {section}{\numberline {6.7}Liên hệ \& đóng góp}{27}{section.6.7}%
+\contentsline {chapter}{\numberline {A}Phụ lục mẫu}{29}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Ví dụ mã nguồn Python}{29}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Ví dụ bảng dữ liệu}{30}{section.A.2}%
+\contentsline {chapter}{\numberline {B}Danh sách lệnh và Hướng dẫn sử dụng nhanh}{31}{appendix.B}%
+\contentsline {section}{\numberline {B.1}Các lệnh khai báo thông tin học viên (Metadata)}{31}{section.B.1}%
+\contentsline {subsection}{\numberline {B.1.1}Khai báo bắt buộc}{31}{subsection.B.1.1}%
+\contentsline {subsection}{\numberline {B.1.2}Khai báo tùy chọn (Có sẵn giá trị mặc định)}{31}{subsection.B.1.2}%
+\contentsline {subsection}{\numberline {B.1.3}Khai báo thành viên Hội đồng chấm (Mới bổ sung)}{32}{subsection.B.1.3}%
+\contentsline {section}{\numberline {B.2}Các lệnh sinh trang tự động (Page Generators)}{32}{section.B.2}%
+\contentsline {section}{\numberline {B.3}Các lệnh lấy dữ liệu an toàn (Public Getters)}{33}{section.B.3}%
+\contentsline {section}{\numberline {B.4}Các kiểu định dạng mã nguồn (Code Listings Styles)}{33}{section.B.4}%
+\contentsline {section}{\numberline {B.5}Quy trình biên dịch 4 bước tiêu chuẩn}{34}{section.B.5}%

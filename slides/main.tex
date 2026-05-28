@@ -1,0 +1,205 @@
+% ============================================================
+%  HCMUT-DEE Thesis Kit v2.0.4 — Slide Bảo Vệ Đồ Án
+%  Copyright (c) 2026 Nguyễn Trọng Thắng & TS. Nguyễn Phúc Khải
+%  Khoa Điện - Điện Tử, Đại học Bách Khoa TP. Hồ Chí Minh
+%  License: MIT
+%
+%  HUONG DAN:
+%    1. Chinh sua THONG TIN ben duoi
+%    2. Viet noi dung cac slide
+%    3. Bien dich: pdflatex main.tex
+%
+%  LUU Y: File hinh nen nam trong folder images/
+%    - front-background.pdf  (trang bia)
+%    - background.pdf        (trang noi dung)
+% ============================================================
+
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usefonttheme{structurebold}
+\usefonttheme[onlymath]{serif}
+
+% --- Mau sac BK ---
+\definecolor{BKTemplate}{rgb}{0.11765, 0.30588, 0.47451}
+\usecolortheme[named=BKTemplate]{structure}
+\setbeamercolor{title}{fg=BKTemplate,bg=}
+\setbeamertemplate{caption}[numbered]
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url,booktabs,amsfonts,amsmath}
+\usepackage{graphicx,tikz,subcaption}
+\usepackage{multicol,xcolor,colortbl}
+\usepackage[linesnumbered,ruled]{algorithm2e}
+\usepackage[style=authortitle,backend=bibtex]{biblatex}
+\addbibresource{references.bib}
+
+\renewcommand{\footnotesize}{\tiny}
+
+% ═══════════════════════════════════════════════════════════════
+%  THONG TIN SINH VIEN — CHI CHINH SUA PHAN NAY
+% ═══════════════════════════════════════════════════════════════
+\newcommand{\ThesisTitle}{Tên đề tài tiếng Việt}
+\newcommand{\ThesisTitleEN}{Thesis Title in English}
+\newcommand{\StudentName}{Nguyễn Văn A}
+\newcommand{\StudentID}{21xxxxx}
+\newcommand{\SupervisorName}{TS. Nguyễn Văn B}
+\newcommand{\FacultyName}{Khoa Điện - Điện Tử}
+\newcommand{\PresentDate}{01/06/2026}
+
+% --- Cau hinh trang bia ---
+\title[Đồ án tốt nghiệp]{%
+  \vspace*{1cm}\\
+  \textbf{ĐỒ ÁN TỐT NGHIỆP}\\
+  \textbf{\ThesisTitle}\\
+  {\normalsize\textit{(\ThesisTitleEN)}}
+}
+
+\author[\StudentName]{%
+  GVHD: \SupervisorName\\
+  SV: \StudentName\ --- MSSV: \StudentID
+}
+
+\institute[HCMUT]{%
+  \FacultyName\\
+  Trường Đại học Bách Khoa\\
+  Đại học Quốc gia TP. Hồ Chí Minh
+}
+
+\date{\PresentDate}
+
+% --- Muc luc dau moi section ---
+\AtBeginSection[]{%
+  \begin{frame}
+    \frametitle{Nội dung trình bày}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+% ═══════════════════════════════════════════════════════════════
+\begin{document}
+
+% === TRANG BIA (voi hinh nen) ===
+\setbeamertemplate{background canvas}{%
+  \includegraphics[width=\paperwidth,height=\paperheight]{images/FrontBackground.pdf}
+}
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+% === HINH NEN NOI DUNG ===
+\setbeamertemplate{background canvas}{%
+  \includegraphics[width=\paperwidth,height=\paperheight]{images/Background.pdf}
+}
+
+% === LOI TANG ===
+\begin{frame}
+  \vspace{1cm}
+  Xin gửi lời cảm ơn chân thành đến\ldots\\
+  \begin{flushright}
+    \StudentName
+  \end{flushright}
+\end{frame}
+
+% === MUC LUC ===
+\begin{frame}
+  \frametitle{Nội dung trình bày}
+  \tableofcontents
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────
+\section{Giới thiệu}
+% ─────────────────────────────────────────────────────────────
+
+\begin{frame}{Đặt vấn đề}
+  % Trinh bay ly do chon de tai, tinh cap thiet
+\end{frame}
+
+\begin{frame}{Mục tiêu \& Phạm vi}
+  \textbf{Mục tiêu:}
+  \begin{enumerate}
+    \item Mục tiêu 1
+    \item Mục tiêu 2
+  \end{enumerate}
+  \vspace{0.5cm}
+  \pause
+  \textbf{Phạm vi:}
+  \begin{itemize}
+    \item Phạm vi A
+    \item Phạm vi B
+  \end{itemize}
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────
+\section{Cơ sở lý thuyết}
+% ─────────────────────────────────────────────────────────────
+
+\begin{frame}{Tổng quan lý thuyết}
+  % Trinh bay ly thuyet nen tang
+\end{frame}
+
+\begin{frame}{Mô hình toán học}
+  % Trinh bay cong thuc, mo hinh
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────
+\section{Phương pháp đề xuất}
+% ─────────────────────────────────────────────────────────────
+
+\begin{frame}{Tổng quan phương pháp}
+  % So do khoi, flowchart
+\end{frame}
+
+\begin{frame}{Chi tiết thuật toán}
+  % Cac buoc chinh
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────
+\section{Kết quả \& Thảo luận}
+% ─────────────────────────────────────────────────────────────
+
+\begin{frame}{Thiết lập thí nghiệm}
+  % Mo ta he thong test, thong so
+\end{frame}
+
+\begin{frame}{Kết quả chính}
+  % Bang ket qua, do thi
+\end{frame}
+
+\begin{frame}{So sánh \& Thảo luận}
+  % So sanh voi phuong phap khac
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────
+\section{Kết luận \& Hướng phát triển}
+% ─────────────────────────────────────────────────────────────
+
+\begin{frame}{Kết luận}
+  \begin{itemize}
+    \item Đóng góp 1
+    \item Đóng góp 2
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Hướng phát triển}
+  \begin{itemize}
+    \item Hướng phát triển A
+    \item Hướng phát triển B
+  \end{itemize}
+\end{frame}
+
+% ─────────────────────────────────────────────────────────────
+% === SLIDE KET THUC ===
+\setbeamertemplate{footline}{}
+\begin{frame}
+  \centering
+  \vspace{1cm}
+  \textbf{\Huge{--- KẾT THÚC ---}}\\
+  \vspace{0.2cm}
+  \textit{\Large{Cảm ơn quý Thầy/Cô và các bạn đã lắng nghe}}\\
+  \vspace{15pt}
+  Liên hệ: your.email@hcmut.edu.vn
+\end{frame}
+
+\end{document}

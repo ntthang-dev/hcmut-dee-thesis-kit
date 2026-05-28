@@ -1,0 +1,143 @@
+% ============================================================
+%  HCMUT-DEE Thesis Kit v2.0.3 — Chương 2
+%  Copyright (c) 2026 Nguyen Trong Thang & TS. Nguyen Phuc Khai
+%  License: MIT
+% ============================================================
+
+\chapter{Soạn Thảo Nội Dung \LaTeX{} Cơ Bản}
+\label{ch:basics}
+
+\section{Cấu trúc heading}
+
+Trong \LaTeX{}, các cấp tiêu đề được đánh số tự động:
+
+\begin{lstlisting}[style=latexstyle, caption={Các cấp tiêu đề}]
+\chapter{Ten chuong}           % Cap 1 (Chuong)
+\section{Ten muc}              % Cap 2 (Muc)
+\subsection{Ten muc con}       % Cap 3 (Muc con)
+\subsubsection{Ten muc nho}    % Cap 4 (Muc nho hon)
+\end{lstlisting}
+
+\textbf{Lưu ý:} Template này đánh số đến cấp \texttt{subsubsection} và hiển thị mục lục đến cấp \texttt{subsection}.
+
+\section{Đoạn văn và xuống dòng}
+
+Trong \LaTeX{}, bạn tạo đoạn văn mới bằng cách \textbf{để trống một dòng}:
+
+\begin{lstlisting}[style=latexstyle, caption={Tạo đoạn văn mới}]
+Day la doan van thu nhat. Noi dung tiep tuc
+tren cung mot dong.
+
+Day la doan van thu hai. LaTeX tu dong
+thut dau dong.
+\end{lstlisting}
+
+Để \textbf{xuống dòng} mà không tạo đoạn mới, dùng \verb|\\| hoặc \verb|\newline|.
+
+\section{Danh sách}
+
+\subsection{Danh sách không đánh số (itemize)}
+
+\begin{lstlisting}[style=latexstyle]
+\begin{itemize}
+  \item Muc thu nhat
+  \item Muc thu hai
+  \item Muc thu ba
+\end{itemize}
+\end{lstlisting}
+
+Kết quả:
+\begin{itemize}
+  \item Mục thứ nhất
+  \item Mục thứ hai
+  \item Mục thứ ba
+\end{itemize}
+
+\subsection{Danh sách đánh số (enumerate)}
+
+\begin{lstlisting}[style=latexstyle]
+\begin{enumerate}
+  \item Buoc 1: Chuan bi
+  \item Buoc 2: Thuc hien
+  \item Buoc 3: Kiem tra
+\end{enumerate}
+\end{lstlisting}
+
+Kết quả:
+\begin{enumerate}
+  \item Bước 1: Chuẩn bị
+  \item Bước 2: Thực hiện
+  \item Bước 3: Kiểm tra
+\end{enumerate}
+
+\section{Định dạng văn bản}
+
+\begin{table}[H]
+\centering
+\caption{Các lệnh định dạng văn bản thường dùng}
+\label{tab:formatting}
+\begin{tabular}{lll}
+\toprule
+\textbf{Lệnh} & \textbf{Kết quả} & \textbf{Ý nghĩa} \\
+\midrule
+\verb|\textbf{...}| & \textbf{In đậm} & Bold \\
+\verb|\textit{...}| & \textit{In nghiêng} & Italic \\
+\verb|\underline{...}| & \underline{Gạch chân} & Underline \\
+\verb|\texttt{...}| & \texttt{Monospace} & Code font \\
+\verb|\textsuperscript{n}| & x\textsuperscript{n} & Chỉ số trên \\
+\verb|\textsubscript{n}| & x\textsubscript{n} & Chỉ số dưới \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Footnote (Ghi chú chân trang)}
+
+\begin{lstlisting}[style=latexstyle]
+Day la mot cau co ghi chu\footnote{Noi dung ghi chu
+se xuat hien o cuoi trang.}.
+\end{lstlisting}
+
+Đây là một câu có ghi chú\footnote{Nội dung ghi chú sẽ xuất hiện ở cuối trang.}.
+
+\section{Tham chiếu chéo (Cross-reference)}
+\label{sec:crossref}
+
+\LaTeX{} cho phép đánh dấu và tham chiếu đến bất kỳ đối tượng nào:
+
+\begin{lstlisting}[style=latexstyle, caption={Cách sử dụng label và ref}]
+% Dat nhan (label) cho doi tuong
+\chapter{Mo dau}
+\label{ch:modau}
+
+\section{Van de nghien cuu}
+\label{sec:vande}
+
+% Tham chieu den doi tuong
+Nhu da trinh bay o Chuong~\ref{ch:modau},
+cu the tai Muc~\ref{sec:vande}...
+Hinh~\ref{fig:example} minh hoa...
+Bang~\ref{tab:formatting} liet ke...
+\end{lstlisting}
+
+\textbf{Quy ước đặt tên label} (khuyến nghị):
+\begin{itemize}
+  \item Chương: \texttt{ch:ten\_chuong}
+  \item Mục: \texttt{sec:ten\_muc}
+  \item Hình: \texttt{fig:ten\_hinh}
+  \item Bảng: \texttt{tab:ten\_bang}
+  \item Công thức: \texttt{eq:ten\_ct}
+  \item Listing: \texttt{lst:ten\_code}
+\end{itemize}
+
+Ví dụ: Bảng~\ref{tab:formatting} ở trên đã được tham chiếu bằng \verb|\ref{tab:formatting}|.
+
+\section{Viết tiếng Việt trong \LaTeX{}}
+
+Template này đã cấu hình sẵn hỗ trợ tiếng Việt:
+\begin{itemize}
+  \item Package \texttt{vntex} + \texttt{inputenc} (UTF-8).
+  \item Font encoding \texttt{T5} cho tiếng Việt.
+  \item Bạn chỉ cần \textbf{gõ tiếng Việt trực tiếp} trong file \texttt{.tex}.
+\end{itemize}
+
+\textbf{Lưu ý quan trọng:} Lưu file \texttt{.tex} với encoding \textbf{UTF-8} (hầu hết editor hiện đại đều mặc định UTF-8).

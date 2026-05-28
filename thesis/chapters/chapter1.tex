@@ -1,0 +1,126 @@
+% ============================================================
+%  HCMUT-DEE Thesis Kit v2.0.3 — Chương 1
+%  Copyright (c) 2026 Nguyen Trong Thang & TS. Nguyen Phuc Khai
+%  License: MIT
+% ============================================================
+
+\chapter{Giới Thiệu Template \& Hướng Dẫn Cài Đặt}
+\label{ch:introduction}
+
+% ═══════════════════════════════════════════════════════════════
+%  GHI CHU: Chuong nay la HUONG DAN SU DUNG template.
+%  Khi viet do an that, hay XOA toan bo noi dung chuong nay
+%  va thay bang chuong "Mo dau" cua do an cua ban.
+% ═══════════════════════════════════════════════════════════════
+
+\section{Giới thiệu HCMUT-DEE Thesis Kit}
+
+Chào mừng bạn đến với \textbf{HCMUT-DEE Thesis Kit} phiên bản \TemplateVersion{} --- bộ template \LaTeX{} được thiết kế dành riêng cho sinh viên Khoa Điện - Điện Tử, Trường Đại học Bách Khoa TP. Hồ Chí Minh (ĐHQG-HCM).
+
+Template này giúp bạn:
+\begin{itemize}
+  \item Định dạng đồ án tốt nghiệp \textbf{đúng chuẩn} của trường.
+  \item \textbf{Tự động sinh} trang bìa, trang nhiệm vụ, tờ chấm.
+  \item Quản lý tài liệu tham khảo chuẩn \textbf{IEEE}.
+  \item Chèn mã nguồn Python, MATLAB, C/C++, PLC với \textbf{syntax highlighting}.
+  \item Tương thích \textbf{Overleaf}, TeXStudio, VS Code.
+\end{itemize}
+
+\section{Cấu trúc thư mục}
+\label{sec:structure}
+
+Dưới đây là cấu trúc thư mục của template:
+
+\begin{lstlisting}[style=latexstyle, caption={Cấu trúc thư mục HCMUT-DEE Thesis Kit}, label={lst:tree}]
+thesis/
+|-- thesis.tex            % File chinh (bien dich file nay)
+|-- hcmut-dee.cls         % Class file (KHONG CHINH SUA)
+|-- references.bib        % Tai lieu tham khao
+|-- front-matter/         % Phan dau (bia, tom tat, ...)
+|   |-- acknowledgment.tex
+|   |-- abstract-vi.tex
+|   |-- abstract-en.tex
+|   +-- abbreviations.tex
+|-- chapters/             % Noi dung cac chuong
+|   |-- chapter1.tex
+|   |-- ...
+|   +-- chapter6.tex
+|-- appendices/           % Phu luc
+|   +-- appendix-sample.tex
++-- figures/              % Hinh anh
+    |-- logos/             % Logo truong
+    +-- examples/         % Hinh mau
+\end{lstlisting}
+
+\section{Cài đặt môi trường}
+\label{sec:installation}
+
+\subsection{Cách 1: Sử dụng Overleaf (Khuyến nghị)}
+
+Overleaf là nền tảng \LaTeX{} trực tuyến, \textbf{không cần cài đặt} gì trên máy tính.
+
+\begin{enumerate}
+  \item Truy cập \url{https://www.overleaf.com} và đăng ký tài khoản (miễn phí).
+  \item \textbf{Upload} toàn bộ thư mục \texttt{thesis/} lên Overleaf:
+    \begin{itemize}
+      \item Chọn ``New Project'' $\rightarrow$ ``Upload Project''.
+      \item Nén folder \texttt{thesis/} thành file \texttt{.zip} rồi upload.
+    \end{itemize}
+  \item Trong Overleaf, vào \textbf{Menu} $\rightarrow$ đặt ``Main document'' là \texttt{thesis.tex}.
+  \item Đặt \textbf{Compiler} là \texttt{pdfLaTeX}.
+  \item Nhấn \textbf{Recompile} để biên dịch.
+\end{enumerate}
+
+\subsection{Cách 2: TeXStudio + MiKTeX (Windows)}
+
+\begin{enumerate}
+  \item Cài đặt \textbf{MiKTeX}: \url{https://miktex.org/download}
+    \begin{itemize}
+      \item Chọn ``Install missing packages on the fly: Yes''.
+    \end{itemize}
+  \item Cài đặt \textbf{TeXStudio}: \url{https://www.texstudio.org/}
+  \item Mở file \texttt{thesis.tex} trong TeXStudio.
+  \item Chọn \textbf{Build \& View} (phím tắt: \texttt{F5}).
+\end{enumerate}
+
+\subsection{Cách 3: VS Code + LaTeX Workshop}
+
+\begin{enumerate}
+  \item Cài đặt TeX Live: \url{https://www.tug.org/texlive/}
+  \item Cài extension \textbf{LaTeX Workshop} trong VS Code.
+  \item Mở folder \texttt{thesis/} trong VS Code.
+  \item Biên dịch bằng \texttt{Ctrl+Alt+B} hoặc lưu file (auto-build).
+\end{enumerate}
+
+\section{Biên dịch lần đầu}
+\label{sec:first-compile}
+
+Quy trình biên dịch đầy đủ gồm 4 bước:
+
+\begin{enumerate}
+  \item \texttt{pdflatex thesis.tex} --- Lần 1: tạo file .aux
+  \item \texttt{bibtex thesis} --- Xử lý tài liệu tham khảo
+  \item \texttt{pdflatex thesis.tex} --- Lần 2: cập nhật tham chiếu
+  \item \texttt{pdflatex thesis.tex} --- Lần 3: hoàn thiện mục lục
+\end{enumerate}
+
+\textbf{Lưu ý:} Trên Overleaf, bạn chỉ cần nhấn ``Recompile'' --- hệ thống tự chạy đủ các bước.
+
+\section{Chỉnh sửa thông tin cá nhân}
+\label{sec:personal-info}
+
+Mở file \texttt{thesis.tex} và chỉnh sửa \textbf{duy nhất} phần ``THÔNG TIN SINH VIÊN'':
+
+\begin{lstlisting}[style=latexstyle, caption={Các lệnh thông tin cá nhân trong thesis.tex}]
+\ThesisTitle{Ten de tai tieng Viet}
+\ThesisTitleEN{Thesis Title in English}
+\StudentName{Ho Ten Sinh Vien}
+\StudentID{21xxxxx}
+\StudentClass{BK21HTD}
+\Major{Ky thuat Dien}
+\Supervisor{TS. Nguyen Van B}
+\ThesisMonth{06}
+\ThesisYear{2026}
+\end{lstlisting}
+
+Sau khi chỉnh xong, biên dịch lại --- trang bìa, trang nhiệm vụ, tờ chấm sẽ \textbf{tự động cập nhật} toàn bộ thông tin.

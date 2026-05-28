@@ -1,0 +1,152 @@
+% ============================================================
+%  HCMUT-DEE Thesis Kit v2.0.3 — Chương 4
+%  Copyright (c) 2026 Nguyen Trong Thang & TS. Nguyen Phuc Khai
+%  License: MIT
+% ============================================================
+
+\chapter{Quản Lý Tài Liệu Tham Khảo Chuẩn IEEE}
+\label{ch:references}
+
+\section{Tổng quan về BibTeX}
+
+Template sử dụng \textbf{BibTeX} với style \texttt{IEEEtran} --- chuẩn trích dẫn được sử dụng rộng rãi nhất trong ngành Kỹ thuật Điện.
+
+\begin{itemize}
+  \item File \texttt{references.bib}: chứa tất cả tài liệu tham khảo.
+  \item Mỗi entry có một \textbf{citation key} duy nhất (ví dụ: \texttt{nguyen2024optimal}).
+  \item Trích dẫn trong văn bản bằng lệnh \verb|\cite{key}|.
+\end{itemize}
+
+\section{Cấu trúc file .bib}
+
+\subsection{Bài báo tạp chí (@article)}
+
+\begin{lstlisting}[style=latexstyle, caption={Entry @article mẫu}]
+@article{nguyen2024optimal,
+  title   = {Optimal Placement of DG in Distribution Networks},
+  author  = {Nguyen, Van A and Tran, Van B},
+  journal = {IEEE Transactions on Power Systems},
+  volume  = {39},
+  number  = {2},
+  pages   = {1234--1245},
+  year    = {2024},
+  publisher = {IEEE}
+}
+\end{lstlisting}
+
+\subsection{Bài conference (@inproceedings)}
+
+\begin{lstlisting}[style=latexstyle, caption={Entry @inproceedings mẫu}]
+@inproceedings{le2023method,
+  title     = {A Novel Method for Power Flow Analysis},
+  author    = {Le, Thi C and Pham, Van D},
+  booktitle = {2023 IEEE PES General Meeting},
+  pages     = {1--5},
+  year      = {2023},
+  publisher = {IEEE}
+}
+\end{lstlisting}
+
+\subsection{Sách (@book)}
+
+\begin{lstlisting}[style=latexstyle, caption={Entry @book mẫu}]
+@book{glover2017power,
+  title     = {Power Systems Analysis and Design},
+  author    = {Glover, J. Duncan and Overbye, Thomas},
+  year      = {2017},
+  edition   = {6th},
+  publisher = {Cengage Learning}
+}
+\end{lstlisting}
+
+\subsection{Luận văn / Đồ án (@mastersthesis, @phdthesis)}
+
+\begin{lstlisting}[style=latexstyle, caption={Entry luận văn mẫu}]
+@mastersthesis{ntthang2025thesis,
+  title  = {De xuat thua toan...},
+  author = {Thang, Nguyen-Trong},
+  school = {Truong Dai hoc Bach Khoa TP. HCM},
+  year   = {2025}
+}
+\end{lstlisting}
+
+\subsection{Website (@online hoặc @misc)}
+
+\begin{lstlisting}[style=latexstyle, caption={Entry website mẫu}]
+@misc{overleaf2024,
+  title        = {Overleaf Documentation},
+  author       = {{Overleaf}},
+  howpublished = {\url{https://www.overleaf.com/learn}},
+  year         = {2024},
+  note         = {Truy cap: 2026-01-15}
+}
+\end{lstlisting}
+
+\section{Cách trích dẫn trong văn bản}
+
+\begin{table}[H]
+\centering
+\caption{Các lệnh trích dẫn}
+\label{tab:cite-commands}
+\begin{tabular}{lp{9cm}}
+\toprule
+\textbf{Lệnh} & \textbf{Kết quả / Ý nghĩa} \\
+\midrule
+\verb|\cite{key}|          & Trích dẫn 1 nguồn: [1] \\
+\verb|\cite{key1,key2}|    & Trích dẫn nhiều nguồn: [1, 2] \\
+\verb|\cite[p.~15]{key}|   & Trích dẫn có trang: [1, p. 15] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Quy ước đặt citation key:} \texttt{ho\_tac\_gia + nam + tu\_khoa}
+
+Ví dụ: \texttt{nguyen2024optimal}, \texttt{glover2017power}, \texttt{ieee2019standard}
+
+\subsection{Ví dụ thực tế trích dẫn sách giáo trình tiếng Việt}
+Đối với sách giáo trình hoặc tài liệu tham khảo tiếng Việt có nhiều thông tin đặc thù (như thông tin tái bản, nhà xuất bản tiếng Việt), sinh viên cần nhập đầy đủ các trường thông tin tương tự như sách nước ngoài nhưng có thể Việt hóa các cụm từ cần thiết.
+
+Ví dụ, sách giáo trình chuyên ngành Hệ thống điện của tác giả Hồ Văn Hiến~\cite{ho2005hethongdien} được khai báo trong file \texttt{references.bib} như sau:
+\begin{lstlisting}[style=latexstyle, caption={Khai báo sách tiếng Việt mẫu trong .bib}]
+@book{ho2005hethongdien,
+  title={He thong dien: Truyen tai va phan phoi},
+  author={Hien, Ho Van},
+  year={2005},
+  edition={tai ban lan thu nhat co sua chua, bo sung},
+  publisher={Nha xuat ban Dai hoc Quoc gia TP. Ho Chi Minh},
+  address={Thanh pho Ho Chi Minh}
+}
+\end{lstlisting}
+
+Để trích dẫn sách này trong văn bản báo cáo, sinh viên chỉ cần gọi lệnh:
+\begin{center}
+  \texttt{\textbackslash cite\{ho2005hethongdien\}} $\rightarrow$ Kết quả hiển thị trong tài liệu: \cite{ho2005hethongdien}
+\end{center}
+
+\section{Lấy BibTeX nhanh}
+
+\subsection{Từ Google Scholar}
+
+\begin{enumerate}
+  \item Tìm bài báo trên \url{https://scholar.google.com}
+  \item Nhấn biểu tượng dấu ngoặc kép \textbf{``} (Cite)
+  \item Chọn \textbf{BibTeX} ở cuối popup
+  \item Copy và dán vào file \texttt{references.bib}
+\end{enumerate}
+
+\subsection{Từ Zotero / Mendeley}
+
+\begin{enumerate}
+  \item Import bài báo vào thư viện Zotero/Mendeley
+  \item Export $\rightarrow$ chọn định dạng \textbf{BibTeX (.bib)}
+  \item Copy nội dung vào file \texttt{references.bib}
+\end{enumerate}
+
+\section{Lưu ý thường gặp}
+
+\begin{itemize}
+  \item \textbf{Ký tự đặc biệt}: Dấu \texttt{\&} phải viết \verb|\&| trong BibTeX.
+  \item \textbf{Chữ hoa trong title}: BibTeX có thể tự chuyển thành chữ thường. Để giữ chữ hoa, bọc trong \verb|{...}|. Ví dụ: \verb|title = {{IEEE} Standard}|.
+  \item \textbf{Tên tiếng Việt}: Dùng dấu \verb|{...}| cho ký tự có dấu. Ví dụ: \verb|author = {Nguy{\~e}n, V{\u a}n A}|.
+  \item \textbf{Kiểm tra}: Sau khi biên dịch, kiểm tra phần ``Tài liệu tham khảo'' xem có entry nào bị thiếu không (thường do typo trong citation key).
+\end{itemize}

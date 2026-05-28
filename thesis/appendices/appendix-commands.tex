@@ -1,0 +1,107 @@
+% ============================================================
+%  HCMUT-DEE Thesis Kit v2.0.4 — Phụ lục B
+%  Copyright (c) 2026 Nguyễn Trọng Thắng & TS. Nguyễn Phúc Khải
+%  License: MIT
+% ============================================================
+
+\chapter{Danh sách lệnh và Hướng dẫn sử dụng nhanh}
+\label{app:commands-guide}
+
+Phụ lục này tổng hợp toàn bộ danh sách các lệnh tùy biến (custom commands), biến dữ liệu học viên (metadata) và các kiểu định dạng có sẵn trong lớp tài liệu \texttt{hcmut-dee.cls}. Sinh viên có thể tra cứu nhanh để tùy biến báo cáo của mình.
+
+\section{Các lệnh khai báo thông tin học viên (Metadata)}
+
+Mở file \texttt{thesis.tex} để chỉnh sửa các thông tin này trong phần ``THÔNG TIN SINH VIÊN''.
+
+\subsection{Khai báo bắt buộc}
+\begin{itemize}
+  \item \verb|\ThesisTitle{...}|: Khai báo tiêu đề đồ án tốt nghiệp bằng tiếng Việt.
+  \item \verb|\ThesisTitleEN{...}|: Khai báo tiêu đề tiếng Anh tương ứng.
+  \item \verb|\StudentName{...}|: Khai báo Họ và tên sinh viên thực hiện.
+  \item \verb|\StudentID{...}|: Khai báo Mã số sinh viên (MSSV).
+  \item \verb|\StudentClass{...}|: Khai báo Lớp sinh hoạt (ví dụ: \texttt{BK21HTD}).
+  \item \verb|\Major{...}|: Khai báo Ngành đào tạo (ví dụ: \texttt{Kỹ thuật Điện}).
+  \item \verb|\Supervisor{...}|: Khai báo Học hàm, học vị và họ tên Giảng viên hướng dẫn.
+\end{itemize}
+
+\subsection{Khai báo tùy chọn (Có sẵn giá trị mặc định)}
+\begin{itemize}
+  \item \verb|\Faculty{...}|: Khai báo tên Khoa quản lý (Mặc định: \texttt{Khoa Điện - Điện Tử}).
+  \item \verb|\Department{...}|: Khai báo tên Bộ môn (Ví dụ: \texttt{Bộ môn Hệ thống điện}).
+  \item \verb|\ReportType{...}|: Khai báo loại báo cáo (Mặc định: \texttt{ĐỒ ÁN TỐT NGHIỆP}).
+  \item \verb|\ThesisMonth{...}|: Khai báo tháng bảo vệ (Định dạng hai chữ số, ví dụ: \texttt{06}).
+  \item \verb|\ThesisYear{...}|: Khai báo năm bảo vệ (Định dạng bốn chữ số, ví dụ: \texttt{2026}).
+  \item \verb|\AssignDate{ngay}{thang}{nam}|: Khai báo ngày giao nhiệm vụ đồ án tốt nghiệp.
+  \item \verb|\DueDate{ngay}{thang}{nam}|: Khai báo ngày hạn cuối nộp báo cáo.
+  \item \verb|\Reviewer{...}|: Khai báo Giảng viên phản biện (nếu biết trước).
+  \item \verb|\SupervisorPercent{...}|: Tỷ lệ hướng dẫn của GVHD (Mặc định: \texttt{100\%}).
+  \item \verb|\AssignmentTasks{...}|: Khai báo danh sách các đầu việc chính trong trang Nhiệm vụ.
+\end{itemize}
+
+\subsection{Khai báo thành viên Hội đồng chấm (Mới bổ sung)}
+Để hiển thị tên Hội đồng trên trang Tờ chấm điểm, hãy bỏ dấu comment \texttt{\%} ở các dòng sau trong \texttt{thesis.tex}:
+\begin{itemize}
+  \item \verb|\CouncilMemberOne{...}|: Khai báo họ tên Chủ tịch Hội đồng.
+  \item \verb|\CouncilMemberTwo{...}|: Khai báo họ tên Ủy viên/Thư ký Hội đồng.
+  \item \verb|\CouncilMemberThree{...}|: Khai báo họ tên Ủy viên thứ 3.
+  \item \verb|\CouncilMemberFour{...}|: Khai báo họ tên Ủy viên thứ 4.
+  \item \verb|\CouncilMemberFive{...}|: Khai báo họ tên Ủy viên thứ 5.
+\end{itemize}
+
+\section{Các lệnh sinh trang tự động (Page Generators)}
+
+Các lệnh này được gọi trong \texttt{thesis.tex} để tự động tạo ra các trang giấy tờ biểu mẫu hành chính chuẩn quy định:
+\begin{itemize}
+  \item \verb|\makecover|: Sinh trang bìa chính thức có hoa văn viền khung kép Bách Khoa.
+  \item \verb|\makeassignment|: Sinh trang Nhiệm vụ khóa luận/đồ án tốt nghiệp theo form FL012.
+  \item \verb|\makeevaluation|: Sinh trang tờ chấm điểm hội đồng (Tự động hiển thị tên hoặc kẻ hàng chấm chấm điền tay).
+\end{itemize}
+
+\section{Các lệnh lấy dữ liệu an toàn (Public Getters)}
+
+Sinh viên có thể sử dụng các lệnh sau trong văn bản để hiển thị các dữ liệu đã khai báo ở phần thông tin sinh viên mà không bị dính ký tự đặc biệt \texttt{@}:
+\begin{center}
+\begin{tabular}{ll}
+  \toprule
+  \textbf{Lệnh truy xuất} & \textbf{Thông tin lấy ra} \\
+  \midrule
+  \verb|\getThesisTitle|    & Tiêu đề đề tài bằng tiếng Việt \\
+  \verb|\getThesisTitleEN|  & Tiêu đề đề tài bằng tiếng Anh \\
+  \verb|\getStudentName|     & Họ tên sinh viên thực hiện \\
+  \verb|\getStudentID|       & Mã số sinh viên (MSSV) \\
+  \verb|\getStudentClass|    & Lớp sinh hoạt \\
+  \verb|\getMajor|           & Ngành đào tạo \\
+  \verb|\getSupervisor|      & Giảng viên hướng dẫn \\
+  \verb|\getFaculty|         & Tên Khoa chủ quản \\
+  \verb|\getThesisMonth|     & Tháng bảo vệ đề tài \\
+  \verb|\getThesisYear|      & Năm bảo vệ đề tài \\
+  \verb|\getCouncilMemberOne| & Họ tên Chủ tịch Hội đồng chấm \\
+  \verb|\getCouncilMemberTwo| & Họ tên Ủy viên/Thư ký Hội đồng \\
+  \verb|\getCouncilMemberThree| & Họ tên Ủy viên thứ 3 \\
+  \verb|\getCouncilMemberFour| & Họ tên Ủy viên thứ 4 \\
+  \verb|\getCouncilMemberFive| & Họ tên Ủy viên thứ 5 \\
+  \bottomrule
+\end{tabular}
+\end{center}
+
+\section{Các kiểu định dạng mã nguồn (Code Listings Styles)}
+
+Template được cấu hình sẵn 5 môi trường định dạng mã nguồn trong khối lệnh \verb|\begin{lstlisting}[style=...]|:
+\begin{enumerate}
+  \item \texttt{pythonstyle}: Tối ưu hóa từ khóa chuyên sâu cho mã nguồn Python.
+  \item \texttt{matlabstyle}: Tối ưu hóa từ khóa và ký hiệu cho mã nguồn MATLAB.
+  \item \texttt{cstyle}: Tối ưu hóa định dạng cho ngôn ngữ C/C++ và các định dạng kiểu dữ liệu nhúng.
+  \item \texttt{plcstyle}: Định dạng từ khóa Structured Text (IEC 61131-3) chuyên biệt cho ngành Điện - Điện tử.
+  \item \texttt{latexstyle}: Hỗ trợ viết và giải thích các thẻ lệnh LaTeX.
+\end{enumerate}
+
+\section{Quy trình biên dịch 4 bước tiêu chuẩn}
+
+Để đảm bảo mục lục, tham chiếu và danh mục tài liệu tham khảo được cập nhật chính xác nhất, quy trình biên dịch thủ công qua terminal gồm các lệnh sau:
+\begin{lstlisting}[style=latexstyle, caption={Quy trinh bien dich 4 buoc qua Terminal}]
+pdflatex thesis.tex
+bibtex thesis
+pdflatex thesis.tex
+pdflatex thesis.tex
+\end{lstlisting}
+\textit{Lưu ý: Nếu sử dụng Overleaf, hệ thống sẽ tự động thực hiện đầy đủ các bước này khi nhấn nút Recompile.}

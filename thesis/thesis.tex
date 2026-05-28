@@ -1,0 +1,145 @@
+% ============================================================
+%  HCMUT-DEE Thesis Kit v2.0.4 — Main Document
+%  Copyright (c) 2026 Nguyễn Trọng Thắng & TS. Nguyễn Phúc Khải
+%  License: MIT
+% ============================================================
+%
+% HUONG DAN NHANH:
+%   1. Chinh sua THONG TIN SINH VIEN o phan ben duoi
+%   2. Viet noi dung cac chuong trong folder chapters/
+%   3. Bien dich: pdflatex -> bibtex -> pdflatex x2
+%
+% TUY CHON DOCUMENTCLASS:
+%   [vietnamese] (mac dinh) | [english] | [french]
+%   [oneside]   (mac dinh, xem tren man hinh)
+%   [twoside]   (in 2 mat, dong gay sach)
+% ============================================================
+
+% === CHON CHE DO ===
+% De in 2 mat: doi thanh [vietnamese, twoside, openright]
+\documentclass[vietnamese, oneside]{hcmut-dee}
+
+% ═══════════════════════════════════════════════════════════════
+%  THONG TIN SINH VIEN — CHI CHINH SUA PHAN NAY
+% ═══════════════════════════════════════════════════════════════
+
+% --- BAT BUOC ---
+\ThesisTitle{Tên đề tài bằng tiếng Việt của bạn}
+\ThesisTitleEN{Your Thesis Title in English}
+\StudentName{Nguyễn Văn A}
+\StudentID{xxxxxxx}
+\StudentClass{DDxxKTDxx}
+\Major{Kỹ thuật Điện}
+\Supervisor{TS. Nguyễn Văn B}
+
+% --- TUY CHON (bo comment neu can) ---
+% \Faculty{Khoa Điện - Điện Tử}          % Mac dinh da co
+% \Department{Bộ môn Hệ thống điện}      % Neu can ghi Bo mon
+% \ReportType{ĐỒ ÁN TỐT NGHIỆP}        % Mac dinh da co
+\ThesisMonth{06}
+\ThesisYear{2026}
+\AssignDate{26}{01}{2026}                 % Ngay giao nhiem vu
+\DueDate{15}{05}{2026}                    % Ngay hoan thanh
+%\Reviewer{TS. Trần Văn C}              % Phan bien (neu biet)
+% \SupervisorPercent{100\%}               % Mac dinh 100%
+% --- THANH PHAN HOI DONG CHAM (bo comment de dien ho ten neu muon) ---
+% \CouncilMemberOne{PGS. TS. Lê Văn D}        % Chu tich Hoi dong
+% \CouncilMemberTwo{TS. Nguyễn Văn E}         % Uy vien / Thu ky
+% \CouncilMemberThree{TS. Phạm Văn F}        % Uy vien
+% \CouncilMemberFour{ThS. Do Van G}           % Uy vien
+% \CouncilMemberFive{ThS. Tran Van H}         % Uy vien
+
+% --- NHIEM VU KHOA LUAN (noi dung muc 2 trong trang Nhiem vu) ---
+\AssignmentTasks{%
+  \begin{itemize}[nosep, leftmargin=1.5em, label={-}, topsep=3pt]
+    \item Nghiên cứu tổng quan về \ldots
+    \item Xây dựng mô hình toán học cho \ldots
+    \item Mô phỏng và đánh giá kết quả trên \ldots
+    \item Phân tích và thảo luận kết quả đạt được.
+  \end{itemize}
+}
+
+% ═══════════════════════════════════════════════════════════════
+%  CẤU HÌNH PDF METADATA & HYPERLINK (BẢN QUYỀN & THAM CHIẾU)
+% ═══════════════════════════════════════════════════════════════
+% Cấu hình các thuộc tính Metadata của file PDF xuất ra (nhấp chuột phải vào 
+% file PDF -> Properties để xem) và định dạng màu sắc cho các hyperlink.
+\hypersetup{
+  unicode=true,
+  pdftitle={\getThesisTitle},
+  pdfauthor={\getStudentName},
+  pdfsubject={\getReportType\ - Ngành \getMajor},
+  pdfkeywords={HCMUT, DEE, \getMajor, Đồ án tốt nghiệp, Thesis Kit},
+  pdfcreator={HCMUT-DEE Thesis Kit v2.0.4},
+  pdfproducer={Copyright (c) 2026 Nguyễn Trọng Thắng và TS. Nguyễn Phúc Khải. MIT License.},
+  % Cấu hình hyperlink màu sắc theo quy chuẩn
+  colorlinks=true,
+  linkcolor=black,             % Màu liên kết nội bộ (Mục lục, hình vẽ, bảng biểu)
+  citecolor=red,               % Màu liên kết tài liệu tham khảo (Citation)
+  urlcolor=BKBlue              % Màu liên kết link web ngoài (GitHub, các URL khác)
+}
+
+% ═══════════════════════════════════════════════════════════════
+%  BAT DAU TAI LIEU
+% ═══════════════════════════════════════════════════════════════
+\begin{document}
+
+% Fix loi trung so trang giua bia va noi dung
+\pagenumbering{alph}
+
+% ─── TRANG BIA & GIAY TO CHINH THUC ─────────────────────────
+\makecover
+
+\cleardoublepage
+\makeassignment
+
+\cleardoublepage
+\makeevaluation
+
+% ─── GIAN DONG 1.5 CHO PHAN NOI DUNG ────────────────────────
+\onehalfspacing
+
+% So trang La Ma cho phan dau
+\pagenumbering{roman}
+
+% ─── LOI CAM ON ──────────────────────────────────────────────
+\cleardoublepage
+\input{front-matter/acknowledgment}
+
+% ─── TOM TAT & ABSTRACT (VIET - ANH - PHAP) ──────────────────
+\cleardoublepage
+\input{front-matter/abstract-vi}
+\cleardoublepage
+\input{front-matter/abstract-en}
+\cleardoublepage
+\input{front-matter/abstract-fr}
+
+% ─── DANH MUC ────────────────────────────────────────────────
+\tableofcontents
+\listoffigures
+\listoftables
+\input{front-matter/abbreviations}
+
+% ─── CHUYEN SANG SO TRANG A-RAP ─────────────────────────────
+\pagenumbering{arabic}
+
+% ─── CAC CHUONG NOI DUNG ────────────────────────────────────
+% Ghi chu: Moi chuong la 1 file .tex rieng trong folder chapters/
+% Ban co the them/bot chuong tuy y
+\input{chapters/chapter1}
+\input{chapters/chapter2}
+\input{chapters/chapter3}
+\input{chapters/chapter4}
+\input{chapters/chapter5}
+\input{chapters/chapter6}
+
+% ─── TAI LIEU THAM KHAO ─────────────────────────────────────
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+% ─── PHU LUC ─────────────────────────────────────────────────
+\appendix
+\input{appendices/appendix-sample}
+\input{appendices/appendix-commands}
+
+\end{document}

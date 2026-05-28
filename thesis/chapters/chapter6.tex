@@ -1,0 +1,168 @@
+% ============================================================
+%  HCMUT-DEE Thesis Kit v2.0.3 — Chương 6
+%  Copyright (c) 2026 Nguyen Trong Thang & TS. Nguyen Phuc Khai
+%  License: MIT
+% ============================================================
+
+\chapter{FAQ, Mẹo \& Xử Lý Lỗi Thường Gặp}
+\label{ch:faq}
+
+\section{Lỗi biên dịch phổ biến}
+
+\subsection{Undefined control sequence}
+
+\textbf{Nguyên nhân:} Gõ sai tên lệnh hoặc thiếu package.
+
+\begin{lstlisting}[style=latexstyle, caption={Ví dụ lỗi và cách sửa}]
+% SAI (thieu dau \)
+\begin{itemze}   % -> Undefined control sequence
+
+% DUNG
+\begin{itemize}
+\end{lstlisting}
+
+\textbf{Cách sửa:} Kiểm tra chính tả tên lệnh. Nếu đúng chính tả, kiểm tra xem package tương ứng đã được load chưa.
+
+\subsection{Missing \$ inserted}
+
+\textbf{Nguyên nhân:} Sử dụng ký tự toán học bên ngoài chế độ toán.
+
+\begin{lstlisting}[style=latexstyle]
+% SAI
+Dien ap V_i tai nut i         % -> Missing $
+
+% DUNG
+Dien ap $V_i$ tai nut $i$
+\end{lstlisting}
+
+\subsection{File not found}
+
+\textbf{Nguyên nhân:} Đường dẫn hình ảnh hoặc file sai.
+
+\begin{lstlisting}[style=latexstyle]
+% SAI (duong dan sai)
+\includegraphics{Figures/hinh1.png}  % F hoa
+
+% DUNG (dung nhu trong folder)
+\includegraphics{figures/hinh1.png}  % f thuong
+\end{lstlisting}
+
+\textbf{Lưu ý:} Linux/Overleaf phân biệt chữ hoa/thường, Windows thì không.
+
+\subsection{LaTeX Error: Too many unprocessed floats}
+
+\textbf{Nguyên nhân:} Quá nhiều hình/bảng liên tiếp mà không có đoạn văn bản.
+
+\textbf{Cách sửa:} Thêm \verb|\clearpage| giữa các hình/bảng, hoặc dùng \verb|[H]| từ package \texttt{float}.
+
+% ═══════════════════════════════════════════════════════════════
+\section{Bảng tràn lề}
+
+\textbf{Giải pháp theo mức độ:}
+
+\begin{enumerate}
+  \item \textbf{Thu nhỏ font:} Thêm \verb|\small| hoặc \verb|\footnotesize| trước bảng.
+  \item \textbf{Dùng tabularx:} Cột \texttt{X} tự co giãn.
+  \item \textbf{Xoay ngang:} Dùng \verb|\begin{landscape}...\end{landscape}|.
+  \item \textbf{Chia bảng:} Tách thành 2 bảng nhỏ hơn.
+\end{enumerate}
+
+\begin{lstlisting}[style=latexstyle, caption={Dùng tabularx để bảng tự co giãn}]
+\begin{table}[H]
+\centering\small
+\begin{tabularx}{\textwidth}{lXXr}
+  \toprule
+  \textbf{STT} & \textbf{Mo ta dai} & \textbf{Chi tiet} & \textbf{Gia tri} \\
+  \midrule
+  1 & Noi dung tu dong xuong dong & Chi tiet bo sung & 100 \\
+  \bottomrule
+\end{tabularx}
+\end{table}
+\end{lstlisting}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Font tiếng Việt bị lỗi}
+
+\textbf{Triệu chứng:} Chữ có dấu hiển thị sai hoặc mất dấu.
+
+\textbf{Kiểm tra:}
+\begin{enumerate}
+  \item File \texttt{.tex} đã lưu encoding \textbf{UTF-8} chưa?
+  \item Đã dùng option \texttt{[vietnamese]} trong \verb|\documentclass|?
+  \item Trên Overleaf: kiểm tra ``Menu $\rightarrow$ Compiler: pdfLaTeX''.
+\end{enumerate}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Overleaf timeout}
+
+Overleaf giới hạn thời gian biên dịch (miễn phí: 1 phút). Nếu bị timeout:
+
+\begin{itemize}
+  \item Giảm số hình ảnh có dung lượng lớn (nén PNG $\rightarrow$ JPG).
+  \item Dùng \verb|\input{}| thay vì \verb|\include{}| (nhanh hơn).
+  \item Comment tạm các chương chưa viết xong.
+  \item Chuyển hình \texttt{.eps} sang \texttt{.pdf} trước khi upload.
+  \item Xóa file \texttt{.aux}, \texttt{.log} cũ.
+\end{itemize}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Mẹo hay}
+
+\subsection{\texttt{\textbackslash input} vs \texttt{\textbackslash include}}
+
+\begin{table}[H]
+\centering
+\caption{So sánh \texttt{\textbackslash input} và \texttt{\textbackslash include}}
+\label{tab:input-vs-include}
+\begin{tabular}{lp{5.5cm}p{5.5cm}}
+\toprule
+ & \texttt{\textbackslash input\{file\}} & \texttt{\textbackslash include\{file\}} \\
+\midrule
+\textbf{Chức năng} & Chèn trực tiếp nội dung & Chèn + tự thêm \verb|\clearpage| \\
+\textbf{Tốc độ} & Nhanh hơn & Chậm hơn (tạo file .aux riêng) \\
+\textbf{Dùng cho} & Section, phần nhỏ & Chương riêng biệt \\
+\textbf{Lồng nhau} & Được & Không được \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Khuyến nghị:} Dùng \verb|\input{}| cho hầu hết trường hợp.
+
+\subsection{Backup với Git}
+
+\begin{lstlisting}[style=latexstyle, caption={Các lệnh Git cơ bản}]
+git init                          % Khoi tao repo
+git add .                         % Them tat ca file
+git commit -m "Xong chuong 3"    % Luu phien ban
+git push origin main              % Day len GitHub/GitLab
+\end{lstlisting}
+
+\subsection{Compile nhanh hơn}
+
+Khi đang viết, chỉ cần chạy \texttt{pdflatex} \textbf{1 lần} (không cần bibtex). Chạy đầy đủ 4 bước khi cần cập nhật tài liệu tham khảo.
+
+% ═══════════════════════════════════════════════════════════════
+\section{Sử dụng AI hỗ trợ viết đồ án}
+
+Bạn có thể dùng ChatGPT, Gemini, hoặc Claude để hỗ trợ viết nội dung. Xem file \texttt{prompts/ai-writing-prompt.md} để có prompt mẫu chi tiết.
+
+\textbf{Ví dụ prompt:}
+
+\begin{tcolorbox}[title={Prompt mẫu cho AI}, colback=CodeBG]
+\small
+``Tôi đang viết đồ án tốt nghiệp bằng LaTeX, dùng template HCMUT-DEE Thesis Kit. Hãy giúp tôi viết phần Cơ sở lý thuyết (Chương 2) về lưới điện phân phối hình tia. Viết bằng tiếng Việt, văn phong học thuật, có trích dẫn giả [X]. Output phải là mã LaTeX sẵn sàng paste vào file chapter2.tex.''
+\end{tcolorbox}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Liên hệ \& đóng góp}
+
+Nếu bạn gặp lỗi hoặc muốn đóng góp cải tiến template:
+
+\begin{itemize}
+  \item Tạo \textbf{Issue} hoặc \textbf{Pull Request} trên GitHub repository.
+  \item Liên hệ tác giả: Nguyễn Trọng Thắng (K19 --- Hệ thống điện).
+\end{itemize}
+
+\begin{center}
+  \textit{Chúc bạn hoàn thành đồ án tốt nghiệp xuất sắc!}
+\end{center}

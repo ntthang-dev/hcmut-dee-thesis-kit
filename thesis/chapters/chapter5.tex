@@ -1,0 +1,152 @@
+% ============================================================
+%  HCMUT-DEE Thesis Kit v2.0.3 — Chương 5
+%  Copyright (c) 2026 Nguyen Trong Thang & TS. Nguyen Phuc Khai
+%  License: MIT
+% ============================================================
+
+\chapter{Phụ Lục, Mã Nguồn \& Listing Code}
+\label{ch:code-listing}
+
+\section{Viết phụ lục}
+
+Phụ lục được khai báo sau lệnh \verb|\appendix| trong \texttt{thesis.tex}. Mỗi phụ lục là một \verb|\chapter{}| và được đánh ký hiệu A, B, C\ldots thay vì số.
+
+\begin{lstlisting}[style=latexstyle, caption={Khai báo phụ lục}]
+% Trong thesis.tex, sau phan Tai lieu tham khao:
+\appendix
+\input{appendices/appendix-sample}   % Phu luc A
+% \input{appendices/appendix-b}       % Phu luc B (neu can)
+\end{lstlisting}
+
+\section{Chèn mã nguồn với listings}
+
+Template đã định nghĩa sẵn \textbf{4 style} cho các ngôn ngữ phổ biến. Bạn chỉ cần chọn style phù hợp.
+
+% ═══════════════════════════════════════════════════════════════
+\subsection{Python (\texttt{pythonstyle})}
+
+\begin{lstlisting}[style=pythonstyle, caption={Ví dụ mã Python --- Tính tổn thất công suất}, label={lst:python-sample}]
+import numpy as np
+
+def calculate_power_loss(V, I, R):
+    """Tinh ton that cong suat tren luoi dien."""
+    P_loss = np.sum(I**2 * R)
+    print(f"Tong ton that: {P_loss:.2f} kW")
+    return P_loss
+
+# Tinh toan
+voltage = np.array([1.0, 0.98, 0.95])
+current = np.array([50.0, 45.0, 60.0])
+resistance = np.array([0.01, 0.02, 0.015])
+loss = calculate_power_loss(voltage, current, resistance)
+\end{lstlisting}
+
+% ═══════════════════════════════════════════════════════════════
+\subsection{MATLAB (\texttt{matlabstyle})}
+
+\begin{lstlisting}[style=matlabstyle, caption={Ví dụ mã MATLAB --- Giải hệ phương trình}, label={lst:matlab-sample}]
+% Giai he phuong trinh tuyen tinh Ax = b
+A = [4 -1 0; -1 4 -1; 0 -1 4];
+b = [15; 10; 10];
+
+% Phuong phap truc tiep
+x = A \ b;
+
+% Hien thi ket qua
+fprintf('Nghiem x = [%.4f, %.4f, %.4f]\n', x);
+
+% Ve do thi
+figure;
+plot(x, 'ro-', 'LineWidth', 2);
+xlabel('Node'); ylabel('Voltage (p.u.)');
+title('Voltage Profile');
+grid on;
+\end{lstlisting}
+
+% ═══════════════════════════════════════════════════════════════
+\subsection{C/C++ (\texttt{cstyle})}
+
+\begin{lstlisting}[style=cstyle, caption={Ví dụ mã C --- Đọc ADC vi điều khiển}, label={lst:c-sample}]
+#include <stdio.h>
+#include <stdint.h>
+
+#define ADC_RESOLUTION  4096    // 12-bit ADC
+#define V_REF           3.3     // Dien ap tham chieu (V)
+
+// Ham doc gia tri dien ap tu ADC
+float read_voltage(uint16_t adc_value) {
+    float voltage = (float)adc_value / ADC_RESOLUTION * V_REF;
+    return voltage;
+}
+
+int main(void) {
+    uint16_t raw = 2048;  // Gia tri ADC thu
+    float v = read_voltage(raw);
+    printf("Dien ap: %.3f V\n", v);
+    return 0;
+}
+\end{lstlisting}
+
+% ═══════════════════════════════════════════════════════════════
+\subsection{PLC Structured Text (\texttt{plcstyle})}
+
+\begin{lstlisting}[style=plcstyle, caption={Ví dụ PLC Structured Text --- Điều khiển động cơ}, label={lst:plc-sample}]
+PROGRAM Motor_Control
+VAR
+    Start_Button  : BOOL := FALSE;
+    Stop_Button   : BOOL := FALSE;
+    Motor_Running : BOOL := FALSE;
+    Speed_SP      : REAL := 1500.0;    (* Toc do dat (RPM) *)
+    Speed_PV      : REAL := 0.0;       (* Toc do thuc te *)
+    Timer_Delay   : TON;               (* Bo dinh thoi *)
+END_VAR
+
+(* Logic dieu khien chinh *)
+IF Start_Button AND NOT Stop_Button THEN
+    Timer_Delay(IN := TRUE, PT := T#2S);
+    IF Timer_Delay.Q THEN
+        Motor_Running := TRUE;
+    END_IF;
+ELSIF Stop_Button THEN
+    Motor_Running := FALSE;
+    Timer_Delay(IN := FALSE);
+END_IF;
+
+END_PROGRAM
+\end{lstlisting}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Chèn file code bên ngoài}
+
+Thay vì copy code vào file \texttt{.tex}, bạn có thể include trực tiếp:
+
+\begin{lstlisting}[style=latexstyle, caption={Chèn file code bên ngoài}]
+% Chen file Python
+\lstinputlisting[style=pythonstyle,
+  caption={Ma nguon chuong trinh chinh},
+  label={lst:main-py}
+]{path/to/main.py}
+
+% Chen 1 phan cua file (dong 10 den 25)
+\lstinputlisting[style=matlabstyle,
+  firstline=10, lastline=25,
+  caption={Ham tinh luu luong cong suat}
+]{path/to/powerflow.m}
+\end{lstlisting}
+
+% ═══════════════════════════════════════════════════════════════
+\section{Đính kèm PDF bên ngoài}
+
+Dùng package \texttt{pdfpages} để chèn file PDF (datasheet, chứng chỉ, \ldots):
+
+\begin{lstlisting}[style=latexstyle, caption={Chèn file PDF bên ngoài}]
+% Chen tat ca cac trang cua file PDF
+\includepdf[pages=-]{path/to/document.pdf}
+
+% Chi chen trang 1 va 3
+\includepdf[pages={1,3}]{path/to/document.pdf}
+
+% Chen voi tieu de
+\includepdf[pages=-, pagecommand={
+  \thispagestyle{fancy}}]{path/to/datasheet.pdf}
+\end{lstlisting}

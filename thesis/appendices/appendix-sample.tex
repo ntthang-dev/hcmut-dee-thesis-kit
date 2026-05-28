@@ -1,0 +1,69 @@
+% ============================================================
+%  HCMUT-DEE Thesis Kit v2.0.3 — Phụ lục mẫu
+%  Copyright (c) 2026 Nguyen Trong Thang & TS. Nguyen Phuc Khai
+%  License: MIT
+% ============================================================
+
+\chapter{Phụ lục mẫu}
+\label{app:sample}
+
+% ═══════════════════════════════════════════════════════════════
+%  GHI CHU: Day la phu luc mau. Hay thay the bang noi dung
+%  phu luc cua do an ban. Vi du: ma nguon, du lieu, bang phu.
+% ═══════════════════════════════════════════════════════════════
+
+\section{Ví dụ mã nguồn Python}
+
+\begin{lstlisting}[style=pythonstyle, caption={Hàm tính tổn thất công suất trên lưới điện}, label={lst:app-python}]
+import numpy as np
+
+def backward_forward_sweep(R, X, P_load, Q_load, V_base=12.66):
+    """
+    Giai luu luong cong suat bang phuong phap
+    Backward/Forward Sweep cho luoi hinh tia.
+    """
+    n_bus = len(P_load)
+    V = np.ones(n_bus) * V_base  # Khoi tao dien ap
+
+    for iteration in range(100):
+        # Backward sweep: tinh dong nhanh
+        I_branch = np.zeros(n_bus - 1, dtype=complex)
+        for k in range(n_bus - 2, -1, -1):
+            S = complex(P_load[k+1], Q_load[k+1])
+            I_branch[k] = np.conj(S / V[k+1])
+
+        # Forward sweep: cap nhat dien ap
+        for k in range(n_bus - 1):
+            Z = complex(R[k], X[k])
+            V[k+1] = V[k] - I_branch[k] * Z
+
+        # Kiem tra hoi tu
+        if np.max(np.abs(V - V_old)) < 1e-6:
+            break
+        V_old = V.copy()
+
+    return V
+\end{lstlisting}
+
+\section{Ví dụ bảng dữ liệu}
+
+\begin{table}[H]
+\centering
+\caption{Thông số hệ thống IEEE 33-bus (trích một phần)}
+\label{tab:app-ieee33}
+\begin{tabular}{cccccc}
+\toprule
+\textbf{Nhánh} & \textbf{Từ} & \textbf{Đến} & \textbf{R ($\Omega$)} & \textbf{X ($\Omega$)} & \textbf{P$_{load}$ (kW)} \\
+\midrule
+1  & 1 & 2  & 0.0922 & 0.0477 & 100 \\
+2  & 2 & 3  & 0.4930 & 0.2511 & 90  \\
+3  & 3 & 4  & 0.3661 & 0.1864 & 120 \\
+4  & 4 & 5  & 0.3811 & 0.1941 & 60  \\
+5  & 5 & 6  & 0.8190 & 0.7070 & 60  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% === CHEN FILE PDF BEN NGOAI (bo comment neu can) ===
+% \section{Datasheet thiet bi}
+% \includepdf[pages=-]{path/to/datasheet.pdf}
