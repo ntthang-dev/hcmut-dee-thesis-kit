@@ -6,7 +6,24 @@ Versioning theo [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [2.0.3] - 2026-05-28
+## [2.0.4] - 2026-05-28
+
+### ✨ Added (Thêm mới)
+- Tích hợp công cụ dòng lệnh `thesis-tool.exe` (viết bằng Golang) giúp tự động hóa quá trình biên dịch (build), dọn dẹp (clean) và xem thông tin (info) mà không cần cài đặt môi trường.
+- Bổ sung lệnh chèn tên thành viên Hội đồng đánh giá trong tờ chấm (`\CouncilMemberOne`, v.v.).
+- Bổ sung Phụ lục C hướng dẫn sử dụng công cụ CLI.
+- Cập nhật hướng dẫn ghi chú bản quyền AI sinh ảnh.
+- Cập nhật hướng dẫn trích dẫn IEEE và BiberTex/BibTex.
+- Cấu hình siêu dữ liệu (PDF Metadata) và bản quyền tự động, cấu hình màu sắc hyperlink.
+
+### 🔄 Changed (Thay đổi)
+- Đổi tên file gốc `main.tex` thành `thesis.tex` cho chuẩn mực và bớt gây nhầm lẫn với các file khác.
+- Đóng gói mã nguồn CLI để chỉ public file `.exe`, ẩn hoàn toàn thư mục và file `.go`.
+- Cập nhật tài liệu hướng dẫn (`README.md`, `GUIDE.md`, `GUILDE.md`).
+
+---
+
+## [2.0.3] - 2026-05-10
 
 ### ✨ Added (Thêm mới)
 - Class file `hcmut-dee.cls` viết lại hoàn toàn từ đầu

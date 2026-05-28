@@ -1,0 +1,42 @@
+\chapter{Công cụ CLI quản lý luận văn (Thesis Tool)}
+\label{appendix:cli-tool}
+
+Nhằm mang lại sự tiện lợi, tự động hóa và dễ dàng sử dụng cho người dùng trong quá trình làm luận văn, một công cụ dòng lệnh (CLI - Command Line Interface) nhỏ gọn đã được phát triển chuyên biệt cho bộ mẫu template này. Công cụ này được viết bằng ngôn ngữ Golang để tận dụng khả năng biên dịch thành một tập tin thực thi duy nhất (.exe) mà không cần phải cài đặt môi trường Go, đảm bảo tính nhẹ gọn và khả năng thực thi nhanh chóng.
+
+\section{Mục đích và Ưu điểm}
+\begin{itemize}
+    \item \textbf{Tự động hóa quá trình biên dịch:} Thay vì phải chạy tuần tự các lệnh \texttt{pdflatex}, \texttt{biber}, và \texttt{pdflatex} nhiều lần theo cách thủ công, công cụ tự động lo liệu quy trình này với cấu hình chuẩn nhất.
+    \item \textbf{Dọn dẹp tự động:} Cung cấp tính năng xóa các tập tin tạm, file rác (\texttt{.aux, .log, .toc, .bbl}, v.v.) sinh ra sau quá trình biên dịch, giúp thư mục mã nguồn luôn sạch sẽ.
+    \item \textbf{Đóng gói trực tiếp, độc lập:} Công cụ đã được biên dịch sẵn thành tập tin \texttt{thesis-tool.exe} duy nhất. Sinh viên chỉ việc chạy và sử dụng mà không cần hiểu biết về Golang.
+\end{itemize}
+
+\section{Danh sách các lệnh hỗ trợ}
+Để sử dụng công cụ, mở Terminal hoặc Command Prompt tại thư mục gốc của dự án (nơi chứa file \texttt{thesis-tool.exe}) và sử dụng các lệnh sau:
+
+\begin{enumerate}
+    \item \textbf{Biên dịch luận văn (Build)}
+    \begin{verbatim}
+    thesis-tool build
+    \end{verbatim}
+    Lệnh này sẽ tiến hành gọi trình biên dịch LaTeX để dịch file \texttt{thesis/thesis.tex} sang PDF. Quá trình bao gồm các bước biên dịch văn bản, trích xuất tài liệu tham khảo với Biber và cập nhật lại mục lục. File kết quả sẽ là \texttt{thesis/thesis.pdf}.
+
+    \item \textbf{Dọn dẹp thư mục (Clean)}
+    \begin{verbatim}
+    thesis-tool clean
+    \end{verbatim}
+    Sử dụng lệnh này khi muốn xóa các tập tin tạm, file log và các tệp hỗ trợ phụ được sinh ra trong quá trình biên dịch nhằm giải phóng dung lượng và giúp dự án gọn gàng.
+
+    \item \textbf{Xem phiên bản (Version)}
+    \begin{verbatim}
+    thesis-tool version
+    \end{verbatim}
+    Hiển thị thông tin phiên bản hiện tại của bộ công cụ, ở bản cập nhật này là \textbf{v2.0.4}.
+
+    \item \textbf{Xem trợ giúp (Help)}
+    \begin{verbatim}
+    thesis-tool help
+    \end{verbatim}
+    Liệt kê và giải thích ngắn gọn cách dùng của tất cả các lệnh được hỗ trợ.
+\end{enumerate}
+
+Với \texttt{thesis-tool}, việc tương tác và phát triển luận văn trên template sẽ trở nên hiện đại, chuyên nghiệp và tiết kiệm thời gian hơn rất nhiều.

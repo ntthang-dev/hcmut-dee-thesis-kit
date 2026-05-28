@@ -2,7 +2,7 @@
 
 > **Template LaTeX đồ án tốt nghiệp** — Khoa Điện - Điện Tử, Đại học Bách Khoa TP. Hồ Chí Minh
 
-[![Version](https://img.shields.io/badge/version-v2.0.3-blue)]()
+[![Version](https://img.shields.io/badge/version-v2.0.4-blue)]()
 [![License](https://img.shields.io/badge/license-MIT-green)]()
 [![Overleaf](https://img.shields.io/badge/Overleaf-compatible-success)]()
 [![LaTeX](https://img.shields.io/badge/LaTeX-pdfLaTeX-orange)]()
@@ -26,7 +26,7 @@
 
 ### Bước 1: Tải template
 ```bash
-git clone <repo-url>
+git clone https://github.com/ntthang-dev/hcmut-dee-thesis-kit
 # Hoặc: Download ZIP → Giải nén
 ```
 
@@ -127,6 +127,14 @@ HCMUT-DEE-Thesis-Kit/
 | `\makeassignment` | Trang nhiệm vụ (FL012) |
 | `\makeevaluation` | Tờ chấm |
 
+### Công cụ dòng lệnh (CLI - Thesis Tool)
+Bộ mẫu nay đã đi kèm công cụ `thesis-tool.exe` nhỏ gọn, hỗ trợ thao tác nhanh chóng:
+- `thesis-tool build`: Tự động biên dịch toàn bộ dự án (`pdflatex` → `bibtex` → `pdflatex` ×2)
+- `thesis-tool clean`: Dọn dẹp file rác (`.aux, .log, .toc, .bbl...`)
+- `thesis-tool info`: Xem thông tin chi tiết của bộ template
+- `thesis-tool help`: Xem hướng dẫn sử dụng công cụ
+- `thesis-tool version`: Xem phiên bản
+
 ### Listing styles (chèn code)
 | Style | Ngôn ngữ |
 |-------|---------|
@@ -220,6 +228,7 @@ Template sử dụng **Semantic Versioning (SemVer)**:
 - **PATCH** (ví dụ 2.0.4): Sửa lỗi, chỉnh sửa nhỏ
 
 Muốn đóng góp? Tạo **Issue** hoặc **Pull Request** trên GitHub.
+Nếu cần liên hệ để cải tiến, sửa lỗi, hoặc góp ý cho template, vui lòng liên hệ qua email: **ntthang.dev@gmail.com**.
 
 ---
 

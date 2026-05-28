@@ -1,4 +1,4 @@
-# 🤖 AI Writing Prompts — HCMUT-DEE Thesis Kit v2.0.3
+# 🤖 AI Writing Prompts — HCMUT-DEE Thesis Kit v2.0.4
 
 > Tài liệu hướng dẫn sử dụng AI (ChatGPT, Gemini, Claude) để hỗ trợ viết đồ án tốt nghiệp.
 > **© 2026 Nguyễn Trọng Thắng & TS. Nguyễn Phúc Khải**
@@ -14,7 +14,7 @@ Bạn là trợ lý viết đồ án tốt nghiệp cho sinh viên Khoa Điện 
 
 1. Viết bằng tiếng Việt, văn phong học thuật.
 2. Output là mã LaTeX sẵn sàng paste vào file .tex.
-3. Template: HCMUT-DEE Thesis Kit v2.0.3 (class: hcmut-dee).
+3. Template: HCMUT-DEE Thesis Kit v2.0.4 (class: hcmut-dee).
 4. Trích dẫn: dùng \cite{key} với style IEEE.
 5. Hình ảnh: dùng \begin{figure}[H]...\end{figure}.
 6. Bảng: dùng booktabs (\toprule, \midrule, \bottomrule).

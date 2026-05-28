@@ -203,3 +203,5 @@ Bộ template **HCMUT-DEE Thesis Kit** được phân phối hoàn toàn miễn 
 1. ⭐️ **Tặng 1 Star** trên GitHub repository chính thức: [github.com/ntthang-dev/hcmut-dee-thesis-kit](https://github.com/ntthang-dev/hcmut-dee-thesis-kit) *(hoặc ntthang-dev tùy thuộc tên repo được thiết lập)*.
 2. 📝 **Trích dẫn bộ kit** trong danh mục tài liệu tham khảo theo chuẩn IEEE:
    > N. T. Thắng và N. P. Khải, "HCMUT-DEE Thesis Kit: Bộ template LaTeX luận văn tốt nghiệp Khoa Điện - Điện tử," 2026, GitHub Repository. [Online]. Available: https://github.com/ntthang-dev/hcmut-dee-thesis-kit
+
+Nếu cần liên hệ để cải tiến, sửa lỗi, hoặc góp ý cho template, vui lòng liên hệ qua email: **ntthang.dev@gmail.com**.
