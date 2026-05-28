@@ -90,6 +90,7 @@ HCMUT-DEE-Thesis-Kit/
 ├── README.md                      ← Bạn đang đọc file này
 ├── LICENSE                        ← MIT License
 └── CHANGELOG.md                   ← Lịch sử phiên bản
+└── thesis-tool.exe                ← CLI hỗ trợ làm việc
 ```
 
 ---
@@ -102,8 +103,8 @@ HCMUT-DEE-Thesis-Kit/
 | `\ThesisTitle{}` | Tên đề tài (tiếng Việt) | `\ThesisTitle{Tối ưu hóa...}` |
 | `\ThesisTitleEN{}` | Tên đề tài (tiếng Anh) | `\ThesisTitleEN{Optimization...}` |
 | `\StudentName{}` | Họ tên sinh viên | `\StudentName{Nguyễn Văn A}` |
-| `\StudentID{}` | Mã số sinh viên | `\StudentID{2112345}` |
-| `\StudentClass{}` | Lớp | `\StudentClass{BK21HTD}` |
+| `\StudentID{}` | Mã số sinh viên | `\StudentID{123456}` |
+| `\StudentClass{}` | Lớp | `\StudentClass{xxxxxxxx}` |
 | `\Major{}` | Ngành (mặc định: Kỹ thuật Điện) | `\Major{Kỹ thuật Điện}` |
 | `\Supervisor{}` | GVHD | `\Supervisor{TS. Nguyễn Văn B}` |
 
